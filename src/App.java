@@ -1,40 +1,43 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        Scanner sc =new Scanner(System.in);
+        // Prompt for user inputs
+        System.out.println("Enter the current active count: ");
+        int active_count = sc.nextInt();
 
-        System.out.println("enter the current active count : ");
-
-        int active_count = sc.nextInt(); 
-
-        System.out.println("enter the target incriment:  ");
+        System.out.println("Enter the target increment: ");
         int target_inc = sc.nextInt();
 
-        System.out.println("enter the final Target : ");
+        System.out.println("Enter the final Target: ");
         int final_target = sc.nextInt();
 
-        int total_stage = 10 ;
+        // Assuming total_stage is fixed to 10 as per your original code
+        int total_stage = 10;
+        int[] stage = new int[total_stage];
 
-        int[] stage= new int [total_stage] ;
+        // Calculate stage targets
+        for (int i = 1; i < total_stage; i++) {
+            // Adjust the formula to avoid division by zero and calculate stage targets
+            // We add 1 to i because i starts from 0, so we don't divide by zero
+            stage[i] = active_count + target_inc * i;
 
-        for(int i=0; i<total_stage; i++){
-           stage[i] = sc.nextInt((final_target-active_count)/i+1);
-            
+            // Optionally, you can limit each stage target to not exceed final_target
+            if (stage[i] > final_target) {
+                stage[i] = final_target;
+            }
         }
-        
-        System.out.println("your each stages target are : ");
-        
-        for(int i=0; i <total_stage; i++)
-      { 
-        System.out.print(stage[i]);
-      }
 
+        // Print out each stage target
+        System.out.println("Your each stage's target are: ");
+        for (int i = 0; i < total_stage; i++) {
+          System.out.println("stage "+ (i+1));
+            System.out.println(stage[i+1] + " ");
+        }
 
-
-
-
-
+        // Close the scanner
+        sc.close();
     }
 }

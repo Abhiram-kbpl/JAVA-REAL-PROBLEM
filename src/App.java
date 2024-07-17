@@ -22,19 +22,19 @@ public class App {
         for (int i = 1; i < total_stage; i++) {
             // Adjust the formula to avoid division by zero and calculate stage targets
             // We add 1 to i because i starts from 0, so we don't divide by zero
-            stage[i] = active_count + target_inc * i;
+            stage[i] = active_count + final_target/target_inc * i;
 
             // Optionally, you can limit each stage target to not exceed final_target
             if (stage[i] > final_target) {
                 stage[i] = final_target;
-            }
+            } 
         }
 
         // Print out each stage target
         System.out.println("Your each stage's target are: ");
-        for (int i = 0; i < total_stage; i++) {
-          System.out.println("stage "+ (i+1));
-            System.out.println(stage[i+1] + " ");
+        for (int i = 1; i <= total_stage; i++) {
+          System.out.println("stage "+ (i));
+            System.out.println(stage[i] + " ");
         }
 
         // Close the scanner

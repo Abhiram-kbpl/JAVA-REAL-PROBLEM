@@ -22,7 +22,7 @@ public class App {
         System.out.println("Enter the final Target: ");
         int final_target = sc.nextInt();
 
-<<<<<<< HEAD
+<<<<<<< HEADg
         int total_stage = 10 ;
         int calc =final_target-active_count;
         int[] stage= new int [total_stage] ;

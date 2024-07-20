@@ -9,18 +9,18 @@ public class App {
 
         int active_count = sc.nextInt(); 
 
-        System.out.println("enter the target incriment:  ");
+        System.out.println("enter the target cap :  ");
         int target_inc = sc.nextInt();
 
         System.out.println("enter the final Target : ");
         int final_target = sc.nextInt();
 
         int total_stage = 10 ;
-
+        int calc =final_target-active_count;
         int[] stage= new int [total_stage] ;
 
-        for(int i=0; i<total_stage; i++){
-           stage[i] = sc.nextInt((final_target-active_count)/i+1);
+        for(int i=1; i<total_stage; i++){
+           stage[i] = sc.nextInt(calc/i+1);
             
         }
         
